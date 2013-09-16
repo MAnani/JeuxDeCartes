@@ -9,11 +9,11 @@
  * \fn ColonneCartes::ColonneCartes()
  * CONSTRUCTEUR par default
  */
-
 tp::ColonneCartes::ColonneCartes()
 {
 
 }
+
 /**
  * \fn void ColonneCartes::initColonneCartes(Liste<Carte> & p_listeCartes)
  * initialise une colonne de cartes à partir d'une liste de cartes, une seule carte est visible
@@ -25,12 +25,11 @@ void tp::ColonneCartes::initColonneCartes(Liste<Carte> & p_listeCartes)
 {
 
 }
+
 /**
- * \fn void Liste<T>:: ajouter (T x, int pos)
+ * \fn void ColonneCartes::ajoute(const Carte& p_carte)
  *
- * \param[in] x Élément à ajouter
- * \param[in] pos Position où insérer l'élément
- * \param[out] aucun paramètre en argument pour effectuer une sortie (inutile donc de mettre ce commentaire)
+ * \param[in]  p_carte une carte à ajouter sur le dessus de la colonne
  *
  * \return rien (inutile donc de mettre ce commentaire)
  */
@@ -40,28 +39,25 @@ void ColonneCartes::ajoute(const Carte& p_carte)
 }
 
 /**
- * \fn void Liste<T>:: ajouter (T x, int pos)
+ * \fn void ColonneCartes::deplacePaquet(ColonneCartes & p_destination, int p_nombreCartes)
  *
- * \param[in] x Élément à ajouter
- * \param[in] pos Position où insérer l'élément
- * \param[out] aucun paramètre en argument pour effectuer une sortie (inutile donc de mettre ce commentaire)
+ * \param[in] p_destination :la colonne de destination
+ * \param[in] int p_nombreCartes :  le nombre de cartes du paquet à déplacer
  *
- * \return rien (inutile donc de mettre ce commentaire)
+ * \return N/A
  */
 void ColonneCartes::deplacePaquet(ColonneCartes & p_destination, int p_nombreCartes)
 {
 
 }
-/**
- * \fn void Liste<T>:: ajouter (T x, int pos)
- *
- * \param[in] x Élément à ajouter
- * \param[in] pos Position où insérer l'élément
- * \param[out] aucun paramètre en argument pour effectuer une sortie (inutile donc de mettre ce commentaire)
- *
- * \return rien (inutile donc de mettre ce commentaire)
- */
 
+/**
+ * \fn void ColonneCartes::supprimeDerniereCarte()
+ *	supprime la dernière carte de la colonne Si la carte supprimée est la dernière carte visible alors la carte
+ *  suivante sera découverte
+ *
+ * \return N/A
+ */
 void ColonneCartes::supprimeDerniereCarte()
 {
 
@@ -70,7 +66,7 @@ void ColonneCartes::supprimeDerniereCarte()
  * \fn int tp::ColonneCartes::getNbCartesVisibles() const
  *
  *
- * \return rien (inutile donc de mettre ce commentaire)
+ * \return retourne le nombre de cartes visibles
  */
 
 int tp::ColonneCartes::getNbCartesVisibles() const
@@ -79,15 +75,14 @@ int tp::ColonneCartes::getNbCartesVisibles() const
 }
 
 /**
- * \fn void Liste<T>:: ajouter (T x, int pos)
+ * \fn friend std::ostream & ColonneCartes::operator<<(std::ostream & os, const ColonneCartes & p_colonneCartes)
  *
  * \param[in] x Élément à ajouter
- * \param[in] pos Position où insérer l'élément
- * \param[out] aucun paramètre en argument pour effectuer une sortie (inutile donc de mettre ce commentaire)
+ * \param[in] p_colonneCartes la colonne à formater
+ * \param[out]  os  le flux contenant les données formatées
  *
- * \return rien (inutile donc de mettre ce commentaire)
+ * \return un flux de sortie pour les appels en cascade
  */
-
 friend std::ostream & ColonneCartes::operator<<(std::ostream & os, const ColonneCartes & p_colonneCartes)
 {
 
