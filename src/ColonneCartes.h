@@ -8,6 +8,8 @@
 #ifndef COLONNECARTES_H_
 #define COLONNECARTES_H_
 
+namespace tp{
+
 class ColonneCartes
 {
 	public:
@@ -30,5 +32,6 @@ class ColonneCartes
 
 
 };
+}
 
 #endif /* COLONNECARTES_H_ */
