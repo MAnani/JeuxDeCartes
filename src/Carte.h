@@ -7,52 +7,58 @@
 
 #ifndef CARTE_H_
 #define CARTE_H_
+#include <iostream>
 
 namespace tp{
-class Sorte
-{
-public:
-	//constructeur
-		Sorte();
-	//destructeur
-
-	//accesseur
-		std::string getSorteDeCarte() const;
-	//mutateur
-private:
-		std::string m_SorteDeCarte();
-};
-
-class Valeur
-{
-public:
-	//constructeur
-			Valeur();
-		//destructeur
-
-		//accesseur
-			std::string getValeurDeLaCarte() const;
-		//mutateur
-
-private:
-			std::string m_ValeurDeLaCarte;
-};
 
 class Carte
 {
+	enum Sorte {coeur = 1 ,
+	            trefle,
+	            pique,
+	            carreau };
+	enum Valeur	{as = 1,
+				deux,
+				trois,
+				quatre,
+				cinq,
+				six,
+				sept,
+				huit,
+				neuf,
+				dix,
+				valet,
+				dame,
+				roi };
+
 	public:
-	//constructeur
+	//constructeurs
 		Carte();
-	//destructeur
+		Carte(Sorte sorte, Valeur valeur);
+	//destructeurs
+		~Carte();
+	//accesseurs
+		int GetValeur();          // Get valeur de la carte.
+		int GetSorte();          // Get sorte de la carte.
+	//mutateurs
+		void  SetValeur(Valeur nouvelleValeur);// Set valeur de la carte.
+		void  SetSorte(Sorte nouvelleSorte); // Set sorte de la carte.
+	//méthodes
+		bool estMemeSorte(const Carte & uneCarte) const;
+		bool estMemeValeur(const Carte & uneCarte) const;
+		bool estSuivante(const Carte & uneCarte) const;
+		bool estPrecedente(const Carte & uneCarte) const
 
-	//accesseur
+		bool operator == (const Carte & uneCarte) const; // Operateur pour la meme carte
 
-	//mutateur
+		void afficherCarte() const;
 
 	private:
+
 		Sorte m_sorte;
 		Valeur m_valeur;
 };
 }
 
 #endif /* CARTE_H_ */
+
